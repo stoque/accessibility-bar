@@ -1,4 +1,3 @@
-
 (function (window, document) {
     'use strict';
 
@@ -11,7 +10,7 @@
     var $btnContrast = document.querySelector('[data-accessibility="contrast"]');
     var countIncrease = 0;
     var defaultConfig;
-    
+
     function init(config) {
         _setDefaultValues(config);
         _initEvents();
@@ -26,8 +25,14 @@
                 incrementLimit: userConfig.fontIncrementLimit || 2
             },
             contrast: {
-                class: userConfig.contrastClass || 'color-inverter'
+                class: userConfig.contrastClass || 'contrast-class'
             }
+        }
+    }
+
+    function _verifyContrast() {
+        if (localStorage.getItem('accessibility-contrast') === 'true') {
+            _setContrast();
         }
     }
 
@@ -71,11 +76,11 @@
         var elementFontSize = window.getComputedStyle(element, null).getPropertyValue('font-size');
         return _convertFontSizeToNumber(elementFontSize);
     }
-    
+
     function _convertFontSizeToNumber(string) {
         /** 
          * @todo Garantir que a unidade seja pixel, caso não seja converter para
-        **/
+         **/
         var regex = /(?:\d+\.?(?:\d+)?)/;
         string = string.match(regex)[0];
         string = Number(string);
@@ -98,7 +103,7 @@
             _countFontIncrement('+')
         }
     }
-    
+
     function decreaseFontSize() {
         var operator = '-';
         if (countIncrease) {
@@ -107,16 +112,10 @@
         }
     }
 
-    function _verifyContrast() {
-        if (localStorage.getItem('accessibility-contrast') === 'true') {
-           _setContrast();
-        }
-    }
-
     function _setContrast() {
         var $body = document.body;
-        _toggleClass('body', defaultConfig.contrast.defaultClass);
-        localStorage.setItem('accessibility-contrast', $body.classList.contains(defaultConfig.contrast.defaultClass));
+        _toggleClass('body', defaultConfig.contrast.class);
+        localStorage.setItem('accessibility-contrast', $body.classList.contains(defaultConfig.contrast.class));
     }
 
     window.Accessibility = Accessibility;
