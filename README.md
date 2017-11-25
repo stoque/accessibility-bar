@@ -1,4 +1,4 @@
-# ng-accessibility-bar
+# Accessibility Bar
 Accessibility Bar plugin.
 
 #### Features
