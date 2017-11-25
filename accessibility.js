@@ -18,7 +18,8 @@
     }
 
     function _setDefaultValues(config) {
-        var userConfig = config;
+        var userConfig = {};
+        config ? userConfig = config : '';
         defaultConfig = {
             font: {
                 increment: userConfig.fontIncrement || 2,
