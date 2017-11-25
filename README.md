@@ -15,7 +15,7 @@ Download the [latest release](https://github.com/stoque/accessibility-bar/releas
 Add script with minified file
 
 ```html
-<script type="text/javascript" src="node_modules/accessibility-bar/dist/ng-accessibility-bar.js"></script>
+<script type="text/javascript" src="vendor/accessibility/accessibility.js"></script>
 ```
 
 Create markup with data-accessibility in buttons, example:
@@ -47,7 +47,7 @@ Create markup with data-accessibility in buttons, example:
 _(optional)_ Add link for css file
 
 ```html
-<link rel="stylesheet" href="node_modules/accessibility-bar/dist/ng-accessibility-bar.css">
+<link rel="stylesheet" href="vendor/accessibility/accessibility.css">
 ```
 
 ### Use
