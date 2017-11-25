@@ -1,4 +1,4 @@
-[![GitHub release](https://img.shields.io/github/release/viniciuslagedo/ng-accessibility-bar.svg?style=flat-square)]()
+[![GitHub release](https://img.shields.io/github/release/stoque/accessibility-bar.svg?style=flat-square)]()
 
 # Accessibility Bar
 Accessibility Bar plugin.
