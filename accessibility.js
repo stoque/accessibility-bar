@@ -68,7 +68,7 @@
                 } else if (operator === '-') {
                     elementFontSize -= defaultConfig.font.increment;
                 }
-                element.setAttribute('style', 'font-size: ' + elementFontSize + 'px;');
+                element.style.fontSize = elementFontSize + 'px';
             });
         });
     }
