@@ -5,16 +5,22 @@
         init: init
     }
 
-    var $btnIncreaseFontSize = document.querySelector('[data-accessibility="font-increase"]');
-    var $btnDecreaseFontSize = document.querySelector('[data-accessibility="font-decrease"]');
-    var $btnContrast = document.querySelector('[data-accessibility="contrast"]');
+    var $btnIncreaseFontSize;
+    var $btnDecreaseFontSize;
+    var $btnContrast;
     var countIncrease = 0;
     var defaultConfig;
 
     function init(config) {
-        _setDefaultValues(config);
-        _initEvents();
-        _verifyContrast();
+        document.addEventListener("DOMContentLoaded", function(event) {
+            $btnIncreaseFontSize = document.querySelector('[data-accessibility="font-increase"]');
+            $btnDecreaseFontSize = document.querySelector('[data-accessibility="font-decrease"]');
+            $btnContrast = document.querySelector('[data-accessibility="contrast"]');
+
+            _setDefaultValues(config);
+            _initEvents();
+            _verifyContrast();
+        });
     }
 
     function _setDefaultValues(config) {
