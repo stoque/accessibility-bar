@@ -34,7 +34,6 @@ class Accessbility {
   _initEvents() {
     this.$btnIncreaseFontSize.addEventListener('click', this._increaseFontSize);
     this.$btnDecreaseFontSize.addEventListener('click', this._decreaseFontSize);
-    console.log(this.$btnContrast)
     this.$btnContrast.addEventListener('click', this._setContrast);
   }
 
@@ -106,7 +105,6 @@ class Accessbility {
 
   _setContrast = () => {
     const $body = document.body;
-    console.log(this)
     this._toggleClass('body', this.defaultConfig.contrast.class);
     localStorage.setItem('accessibility-contrast', $body.classList.contains(this.defaultConfig.contrast.class));
   }
