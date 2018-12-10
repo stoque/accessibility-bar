@@ -1,18 +1,19 @@
 {
   "name": "accessibility-options",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "repository": "git@github.com:stoque/accessibility-bar.git",
   "author": "Lucas Stoque <stoque@live.com>",
   "license": "MIT",
   "scripts": {
     "start": "parcel serve src/example/index.html",
-    "build": "npm run clear && cross-env NODE_ENV=production parcel build src/app/index.js --no-source-maps",
+    "build": "npm run clear && cross-env NODE_ENV=production parcel build src/app/index.js --no-source-maps --global accessibility-options",
     "clear": "rimraf dist"
   },
   "devDependencies": {
     "@babel/core": "^7.2.0",
     "@babel/plugin-proposal-class-properties": "^7.2.1",
+    "@babel/preset-env": "^7.2.0",
     "cross-env": "^5.2.0",
     "parcel-bundler": "^1.10.3",
     "rimraf": "^2.6.2"
