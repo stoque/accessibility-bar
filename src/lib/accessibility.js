@@ -7,7 +7,7 @@ class Accessbility {
     this.defaultConfig = {}
   }
 
-  init (config = null) {
+  init(config = null) {
     this._setDefaultValues(config);
     this._initEvents();
     this._verifyContrast();
@@ -15,13 +15,13 @@ class Accessbility {
 
   _setDefaultValues(config) {
     this.defaultConfig = {
-        font: {
-          increment: config ? userConfig.fontIncrement : 2,
-          incrementLimit: config ? userConfig.fontIncrementLimit : 2
-        },
-        contrast: {
-          class: config ? userConfig.contrastClass : 'contrast-class'
-        }
+      font: {
+        increment: config ? userConfig.fontIncrement : 2,
+        incrementLimit: config ? userConfig.fontIncrementLimit : 2
+      },
+      contrast: {
+        class: config ? userConfig.contrastClass : 'contrast-class'
+      }
     }
   }
 
@@ -72,7 +72,7 @@ class Accessbility {
   }
 
   _convertFontSizeToNumber(string) {
-      // TODO: Garantir que a unidade seja pixel, caso não seja converter para
+    // TODO: Garantir que a unidade seja pixel, caso não seja converter para
     const regex = /(?:\d+\.?(?:\d+)?)/;
     string = string.match(regex)[0];
     string = Number(string);
@@ -81,9 +81,9 @@ class Accessbility {
 
   _countFontIncrement(operator) {
     if (operator === '+') {
-        this.countIncrease += 1;
+      this.countIncrease += 1;
     } else {
-        this.countIncrease -= 1;
+      this.countIncrease -= 1;
     }
     return this.countIncrease;
   }
