@@ -2,3 +2,4 @@ node_modules
 .cache
 .yarn-lock
 dist
+yarn-error.log
